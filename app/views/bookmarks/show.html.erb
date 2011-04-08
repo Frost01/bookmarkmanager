@@ -1,0 +1,13 @@
+<h2>Detail zu Favorit</h2>
+
+<p>Titel: <%= h @bookmark.title%></p>
+
+<p>URL: <%= h @bookmark.url%></p>
+
+<p>Kommentar: <%= h @bookmark.comment%></p>
+
+<p>Erstellt am: <%= @bookmark.created_at%></p>
+
+<p>Geändert am: <%= @bookmark.updated_at%></p>
+
+<p><%= link_to "Zurück zur Liste", :action => "index"%></p>

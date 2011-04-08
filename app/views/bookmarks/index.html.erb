@@ -1,6 +1,10 @@
+<% @title = "liste"%>
 <h2>Liste der Favoriten</h2>
 <ul>
 <%= @bookmarks.each do |bookmark|%>
-<li><%= bookmark%></li>
+<li>
+	<%= link_to h(bookmark.title), h(bookmark.url)%>
+	(<%= link_to "Details", :action => "show", :id => bookmark.id%>)
+</li>
 <%end%>
 </ul>	

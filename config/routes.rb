@@ -1,15 +1,16 @@
-Bookmarkmanager::Application.routes.draw do
+Bookmarkmanager::Application.routes.draw do |map|
   get "bookmarks/index"
 
   get "bookmarks/edit"
 
   get "bookmarks/new"
+  
+  get "bookmarks/show"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
-  match 'bookmarks' => 'bookmarks#index'
 
-
+  map.connect ':controller/:action/:id'
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'
   # Keep in mind you can assign values other than :controller and :action

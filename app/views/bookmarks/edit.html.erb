@@ -1,2 +1,21 @@
 <% @title = "bearbeiten"%>
 <h2>Favorit bearbeiten</h2>
+
+<% form_for :bookmark, :url => {:action => "update", :id => @bookmark.id} do |f| %>
+<p>
+	<label for="bookmark_title">Titel</label>
+	<%= f.text_field :title %>
+</p>
+<p>
+	<label for="bookmark_url">URL</label>
+	<%= f.text_field :url %>
+</p>
+<p>
+	<label for="bookmark_comment">Kommentar</label>
+	<%= f.text_area :comment%>
+</p>
+<p>
+	<%= submit_tag "speichern"%>
+</p>	
+<%end%>
+<p><%= link_to "Zurück zur Liste", :action => "index"%></p>
