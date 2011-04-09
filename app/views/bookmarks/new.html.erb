@@ -1,20 +1,4 @@
 <h2>Neuen Favorit erstellen</h2>
-
-<% form_for :bookmark, :url => {:action => "create"} do |f| %>
-<p>
-	<label for="bookmark_title">Titel</label>
-	<%= f.text_field :title %>
-</p>
-<p>
-	<label for="bookmark_url">URL</label>
-	<%= f.text_field :url %>
-</p>
-<p>
-	<label for="bookmark_comment">Kommentar</label>
-	<%= f.text_area :comment%>
-</p>
-<p>
-	<%= submit_tag "speichern"%>
-</p>	
-<%end%>
-<p><%= link_to "Zurück zur Liste", :action => "index"%></p>
+<%= render :partial => "form",
+:locals => {:url => {:action => "create"}, :submit_text => "Neue Favorit erstellen"}%>
+<p><%= back_to_list%></p>

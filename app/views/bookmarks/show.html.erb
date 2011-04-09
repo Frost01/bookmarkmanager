@@ -6,8 +6,8 @@
 
 <p>Kommentar: <%= h @bookmark.comment%></p>
 
-<p>Erstellt am: <%= @bookmark.created_at%></p>
+<p>Erstellt am: <%= german_time(@bookmark.created_at)%></p>
 
-<p>Geändert am: <%= @bookmark.updated_at%></p>
+<p>Geändert am: <%= german_time(@bookmark.updated_at)%></p>
 
-<p><%= link_to "Zurück zur Liste", :action => "index"%></p>
+<p><%= back_to_list%></p>

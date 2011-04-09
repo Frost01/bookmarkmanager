@@ -1,0 +1,17 @@
+<% form_for :bookmark, :url => url do |f| %>
+<p>
+	<label for="bookmark_title">Titel</label>
+	<%= f.text_field :title %>
+</p>
+<p>
+	<label for="bookmark_url">URL</label>
+	<%= f.text_field :url %>
+</p>
+<p>
+	<label for="bookmark_comment">Kommentar</label>
+	<%= f.text_area :comment%>
+</p>
+<p>
+	<%= submit_tag submit_text%>
+</p>	
+<%end%>

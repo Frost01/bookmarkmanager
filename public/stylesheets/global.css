@@ -56,3 +56,6 @@ input[type="submit"] {
   margin-top: 1em;
   display: block;
 }
+.field_with_errors {
+	background-color: red;
+}

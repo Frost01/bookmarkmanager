@@ -1,0 +1,7 @@
+<li>
+	<%= link_to h(bookmark.title), h(bookmark.url)%>
+	(<%= link_to "Details", :action => "show", :id => bookmark.id%> 
+	<%if admin?%>
+	|<%= link_to "ändern", :action => "edit", :id => bookmark.id%> | <%= link_to "löschen", {:action => "destroy", :id => bookmark.id}, :confirm => "Wollen Sie diesen Datensatz wirklich löschen?"%>
+	<%end%>)	
+</li>

@@ -2,9 +2,11 @@
 <h2>Liste der Favoriten</h2>
 <ul>
 <%= @bookmarks.each do |bookmark|%>
-<li>
-	<%= link_to h(bookmark.title), h(bookmark.url)%>
-	(<%= link_to "Details", :action => "show", :id => bookmark.id%>)
-</li>
+	<%= render :partial => @bookmarks%>
 <%end%>
-</ul>	
+</ul>
+<% if admin? %>	
+	<p>
+		<%= link_to "Neuen Favorit erstellen", :action => "new"%>
+	</p>
+<% end %>

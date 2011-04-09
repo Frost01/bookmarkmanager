@@ -1,4 +1,6 @@
 Bookmarkmanager::Application.routes.draw do |map|
+  get "authentication/login"
+
   get "bookmarks/index"
 
   get "bookmarks/edit"
