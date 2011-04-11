@@ -11,8 +11,12 @@ Bookmarkmanager::Application.routes.draw do |map|
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
-
+  map.root :controller => "bookmarks"
+  map.login 'login', :controller => "authentication", :action => "login"
+  map.logout 'logout', :controller => "authentication", :action => "logout"
+  map.check 'check', :controller => "authentication", :action => "check"
   map.connect ':controller/:action/:id'
+  
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'
   # Keep in mind you can assign values other than :controller and :action

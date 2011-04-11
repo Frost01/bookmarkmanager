@@ -29,9 +29,9 @@
 	<div id="footer">
 		&copy; 2007 |
 		<%if admin?%>
-			<%= link_to "logout", :controller => "authentication", :action => "logout"%>
+			<%= link_to "logout", logout_path%>
 		<%else%>
-			<%= link_to "login", :controller => "authentication", :action => "login"%>
+			<%= link_to "login", login_path%>
 		<%end%>
 	</div>
 </div>

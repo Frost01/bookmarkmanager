@@ -1,6 +1,6 @@
 <h2>Login</h2>
 
-<% form_tag :controller => "authentication", :action => "check" do %>
+<% form_tag check_path do %>
 	<p>
 		<label for="user">Benutzername</label>
 		<%= text_field_tag :user%>
