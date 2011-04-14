@@ -1,21 +1,22 @@
 Bookmarkmanager::Application.routes.draw do |map|
-  get "authentication/login"
+  #get "authentication/login"
 
-  get "bookmarks/index"
+  #get "bookmarks/index"
 
-  get "bookmarks/edit"
+  #get "bookmarks/edit"
 
-  get "bookmarks/new"
+  #get "bookmarks/new"
   
-  get "bookmarks/show"
+  #get "bookmarks/show"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
+  map.resources :bookmarks
   map.root :controller => "bookmarks"
   map.login 'login', :controller => "authentication", :action => "login"
   map.logout 'logout', :controller => "authentication", :action => "logout"
   map.check 'check', :controller => "authentication", :action => "check"
-  map.connect ':controller/:action/:id'
+  # map.connect ':controller/:action/:id'
   
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'

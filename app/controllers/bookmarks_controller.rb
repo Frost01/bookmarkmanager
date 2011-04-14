@@ -11,6 +11,10 @@ class BookmarksController < ApplicationController
 
   def show
     @bookmark = Bookmark.find(params[:id])
+    respond_to do |format|
+      format.html
+      format.xml {render :xml => @bookmark.to_xml}
+    end
   end
 
   def edit
@@ -25,7 +29,7 @@ class BookmarksController < ApplicationController
     @bookmark = Bookmark.find(params[:id])
     if @bookmark.update_attributes(params[:bookmark])
       flash[:notice] = "Favorit wurde erfolgreich geändert"
-      redirect_to :action => "index"
+      redirect_to bookmarks_path
     else
       render :action => "edit"
     end
@@ -35,7 +39,7 @@ class BookmarksController < ApplicationController
     @bookmark = Bookmark.new(params[:bookmark])
     if @bookmark.save
       flash[:notice] = "Favorit wurde erfolgreich angelegt"
-      redirect_to :action => "index"
+      redirect_to bookmarks_path
     else
       render :action => "new"
     end
@@ -45,7 +49,7 @@ class BookmarksController < ApplicationController
     @bookmark = Bookmark.find(params[:id])
     @bookmark.destroy
     flash[:notice] = "Favorit wurde erfolgreich gelöscht"
-    redirect_to :action => "index"
+    redirect_to bookmarks_path
   end
   
 end

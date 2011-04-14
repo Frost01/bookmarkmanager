@@ -1,5 +1,5 @@
 <% @title = "bearbeiten"%>
 <h2>Favorit bearbeiten</h2>
 <%= render :partial => "form",
-:locals => {:url => {:action => "update", :id => @bookmark.id}, :submit_text => "ändern"}%>
+:locals => { :submit_text => "ändern"}%>
 <p><%= back_to_list%></p>
