@@ -1,4 +1,4 @@
-<li>
+<li id="bookmark-<%= bookmark.id%>">
 	<%= link_to h(bookmark.title), h(bookmark.url)%>
 	(<%= link_to "Details", bookmark_path(bookmark.id)%> 
 	<%if admin?%>

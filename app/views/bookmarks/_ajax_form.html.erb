@@ -1,0 +1,17 @@
+<% form_for :bookmark, :remote => true, :url => bookmarks_url do |f| %>
+	<p>
+		<label for="bookmark_title">Titel</label>
+		<%= f.text_field :title %>
+		<%= error_message_on(:bookmark, :title)%>
+	</p>
+	
+	<p>
+		<label for="bookmark_url">URL</label>
+		<%= f.text_field :url%>
+		<%= error_message_on(:bookmark, :url)%>
+	</p>
+	
+	<p>
+		<%= submit_tag "hinzufügen"%>
+	</p>
+<% end%>

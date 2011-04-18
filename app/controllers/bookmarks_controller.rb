@@ -38,8 +38,13 @@ class BookmarksController < ApplicationController
   def create
     @bookmark = Bookmark.new(params[:bookmark])
     if @bookmark.save
-      flash[:notice] = "Favorit wurde erfolgreich angelegt"
-      redirect_to bookmarks_path
+      respond_to do |format|
+        format.html do
+          flash[:notice] = "Favorit wurde erfolgreich angelegt."
+          redirect_to bookmarks_path
+        end
+        format.js
+      end
     else
       render :action => "new"
     end

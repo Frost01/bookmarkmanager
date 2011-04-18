@@ -1,0 +1,2 @@
+page.insert_html :bottom, 'bookmarks', :partial => 'bookmark'
+page.visual_effect :hightlight, "bookmark-#{@bookmark.id}"

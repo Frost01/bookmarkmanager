@@ -1,12 +1,10 @@
 <% @title = "liste"%>
 <h2>Liste der Favoriten</h2>
-<ul>
-<%= @bookmarks.each do |bookmark|%>
+<ul id="bookmarks">
 	<%= render :partial => @bookmarks%>
-<%end%>
 </ul>
 <% if admin? %>	
 	<p>
-		<%= link_to "Neuen Favorit erstellen", new_bookmark_path %>
+		<%= render :partial => "ajax_form"%>
 	</p>
 <% end %>
